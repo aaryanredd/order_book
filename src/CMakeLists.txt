@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+set(CMAKE_CXX_STANDARD 17)
+project(order_book_lib VERSION 1.0.1 DESCRIPTION "core library")
+set(CMAKE_BUILD_TYPE Release)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/order_book ${CMAKE_CURRENT_SOURCE_DIR}/../dependencies/nlohmann/include)
+file(GLOB SOURCES "lib/*.cpp")
+add_library(order_book SHARED ${SOURCES})
+set_target_properties(order_book PROPERTIES VERSION ${PROJECT_VERSION})
